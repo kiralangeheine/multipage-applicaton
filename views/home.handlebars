@@ -1,0 +1,14 @@
+<h1>Home</h1>
+<form action="/messagelist" method="post" id="authorForm">
+    <div class="form-row">
+        <label for="messageAuthor">Name</label>
+        <input type="text" name="author" id="messageAuthor" placeholder="Name" required minlength="1" maxlength="15">
+    </div>
+    <div class="form-validation">
+        <span class="error" id="validationError" style="display: none">Name darf nicht leer sein.</span>
+    </div>
+    <div class="form-controls">
+        <button id="sendButton" type="submit">weiter</button>
+    </div>
+</form>
+<script type="application/javascript" src="public/firstscript.js"></script>

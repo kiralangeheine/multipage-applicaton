@@ -1,0 +1,33 @@
+<h1>Messages</h1>
+<ul class="message-list">
+    {{#messages}}
+        <li class="message-list-item">
+            <div class="message-list-item__author">
+                {{author}}
+            </div>
+            <div class="message-list-item__date">
+                {{date}}
+            </div>
+            <div class="message-list-item__text">
+                {{text}}
+            </div>
+            <form action="/delete" method="post">
+                <input type="hidden" value="{{id}}" name="id">
+                <button type="submit" class="button-delete">Löschen</button>
+            </form>
+        </li>
+    {{/messages}}
+</ul>
+<form action="/done" method="post" id="messageForm">
+    <div class="form-row">
+        <label for="messageText">Text</label>
+        <textarea name="text" id="messageText" rows="4" placeholder="Nachricht" required minlength="1" maxlength="15"></textarea>
+    </div>
+    <div class="form-validation">
+        <span class="error" id="validationError" style="display: none">Author und Text dürfen nicht leer sein.</span>
+    </div>
+    <div class="form-controls">
+        <button id="sendButton" type="submit">Senden</button>
+    </div>
+</form>
+<script type="application/javascript" src="public/script.js"></script>
